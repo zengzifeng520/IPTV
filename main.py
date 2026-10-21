@@ -385,6 +385,7 @@ def updateChannelUrlsM3U(matched, leftover, epg_id_map=None, check_results=None)
 
     def write_group(category, channel_dict):
         f_txt.write(f"{category},#genre#\n")
+        is_first_channel = True
         for channel_name, url_list in channel_dict.items():
             sorted_urls = sorted(
                 url_list,
@@ -417,7 +418,13 @@ def updateChannelUrlsM3U(matched, leftover, epg_id_map=None, check_results=None)
                 new_url = f"{base_url}{url_suffix}"
 
                 tvg_id = epg_id_map.get(channel_name, channel_name)
-                f_m3u.write(f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{channel_name}\" tvg-logo=\"https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{channel_name}.png\" group-title=\"{category}\",{channel_name}\n")
+                # 分组内第一个频道的 logo 使用分组图标（播放器显示为分组图标）
+                if is_first_channel:
+                    logo = config.group_logo_url
+                    is_first_channel = False
+                else:
+                    logo = f"https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{channel_name}.png"
+                f_m3u.write(f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{channel_name}\" tvg-logo=\"{logo}\" group-title=\"{category}\",{channel_name}\n")
                 f_m3u.write(new_url + "\n")
                 f_txt.write(f"{channel_name},{new_url}\n")
 

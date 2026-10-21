@@ -12,21 +12,26 @@ ip_version_priority = "ipv6"
 source_priority = "hotel"
 
 # 每频道最大线路数，0 = 不限制
-max_lines_per_channel = 8
+max_lines_per_channel = 15
+
+# ── 分组图标 ─────────────────────────────────────────────────────────
+# m3u 输出时，每个分组的第一个频道的 tvg-logo 会使用该图标，
+# 播放器将组内首个频道的 logo 显示为分组图标（如 OTT Navigator / TiviMate 等）
+group_logo_url = "https://cdn.jsdelivr.net/gh/zengzifeng520/IPTV@main/group-logo.png"
 
 # ── 订阅源 ───────────────────────────────────────────────────────
 # 每个 URL 都是一个 IPTV 直播源文件（支持 m3u 或 txt 格式）
 # main.py 会依次请求这些地址，提取频道名和播放地址
 # 注：被注释掉的源暂时停用，可取消注释启用
+# 当前为空 = 不使用订阅源，仅使用酒店源 API（见 hotel_config）
 source_urls = [
 ]
 
 # ── 酒店源 ────────────────────────────────────────────
-# hotel_api   : 酒店源 API 地址
-# enabled   : True=启用酒店源抓取，False=跳过
-# allowed_orgs : 只保留指定运营商的节点，空列表=不过滤
-#              可选值: "China Telecom", "China Unicom", "China Mobile",
-#                      "Alibaba Cloud", "Tencent" 等
+# hotel_api     : 列表提取 API 地址（IPTV 搜索神器同款 Worker）
+# hotel_api_auth: 列表 API 签名头 (X-App-Auth)，随上游变更调整
+# hotel_keyword : 可选，按地区/关键词过滤节点（如 "广东"），空=全部
+# enabled       : True=启用酒店源抓取，False=跳过
 hotel_config = {
     "hotel_api": "https://api.809899.xyz",
     "hotel_api_auth": "iptv-tools-official-v1",
@@ -67,15 +72,17 @@ announcements = [
 #   1. M3U 头部的 x-tvg-url 属性，供播放器读取节目指南
 #   2. 频道 ID 映射（{频道名: tvg-id}），让播放器正确显示节目单
 # 建议将最全面的源放在最后，作为保底
-epg_urls = ["https://zengzifeng.ccwu.cc/output/epg.xml"]
+epg_urls = [
+    "https://zengzifeng.ccwu.cc/output/epg.xml"
+]
 
 # ── 质量检测 — HTTP 快筛 ─────────────────────────────────────────────
 # enable_quality_check : True=启用质量检测（测活后过滤失效源），False=直接输出不过滤
 # check_timeout        : 单个 URL HTTP 请求超时时间（秒），超时视为失效
 # check_max_conn       : 最大并发检测数，调高可加速但更占带宽
 enable_quality_check = True
-check_timeout    = 3.5
-check_max_conn   = 80
+check_timeout    = 5.0
+check_max_conn   = 30
 
 # ── 质量检测 — FFprobe 中度探测 ───────────────────────────────────────
 # enable_ffprobe     : True=启用第二层 FFprobe 探测，False=仅 HTTP 快筛
@@ -90,9 +97,9 @@ check_max_conn   = 80
 # min_resolution     : 最低分辨率宽度要求（字符串，如 "720" 表示宽 >= 720px）
 #                      设为空字符串 "" = 不限制分辨率
 # ffprobe_max_streams: ffprobe 最多读取的流数量，避免大文件探流耗时过长
-ffmpeg_path        = ""        # 空 = 使用系统 PATH 里的 ffprobe
+ffmpeg_path        = "C:/Users/zengzifeng/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0.2-full_build/bin/ffprobe.exe"        # 空 = 使用系统 PATH 里的 ffprobe
 enable_ffprobe     = True
-ffprobe_timeout    = 3.5
+ffprobe_timeout    = 5.0
 min_bitrate        = 0         # min_bitrate = 200000 → 码率>0 且 <200kbps 的源会被淘汰；码率=0 的源不受影响
 min_resolution     = "720"     # 宽度最低 720px
 ffprobe_max_streams = 3
