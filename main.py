@@ -428,9 +428,10 @@ def updateChannelUrlsM3U(matched, leftover, epg_id_map=None, check_results=None)
                 new_url = f"{base_url}{url_suffix}"
 
                 tvg_id = epg_id_map.get(channel_name, channel_name)
-                # 分组内第一个频道的 logo 使用分组图标（播放器显示为分组图标）
+                # 分组内第一个频道的 logo 使用对应的彩色 emoji 图标（播放器显示为分组图标）
                 if is_first_channel:
-                    logo = config.group_logo_url
+                    emoji_file = config.group_emoji.get(category, config.group_logo_default)
+                    logo = f"{config.group_logo_base}/{emoji_file}.png"
                     is_first_channel = False
                 else:
                     logo = f"https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{channel_name}.png"
