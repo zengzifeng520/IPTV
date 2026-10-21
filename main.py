@@ -89,8 +89,18 @@ def remap_by_template(channels, template_map):
     leftover = OrderedDict()
     if leftover_all:
         leftover["其他频道"] = leftover_all
+    # 按模板分组/频道顺序重排 matched，保证输出顺序与模板一致
+    ordered = OrderedDict()
+    for group, entries in template_map.items():
+        if group not in matched:
+            continue
+        gd = OrderedDict()
+        for name, _ in entries:
+            if name in matched[group]:
+                gd[name] = matched[group][name]
+        ordered[group] = gd
     logging.info(f"[模板] 归组完成：模板命中 {matched_cnt} 个 URL，未命中频道并入「其他频道」")
-    return matched, leftover
+    return ordered, leftover
 
 
 def fetch_epg_id_map():
