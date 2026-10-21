@@ -14,10 +14,34 @@ source_priority = "hotel"
 # 每频道最大线路数，0 = 不限制
 max_lines_per_channel = 15
 
-# ── 分组图标 ─────────────────────────────────────────────────────────
-# m3u 输出时，每个分组的第一个频道的 tvg-logo 会使用该图标，
+# ── 分组图标（彩色 emoji）────────────────────────────────────────────
+# m3u 输出时，每个分组的第一个频道的 tvg-logo 会使用对应的彩色 emoji 图标，
 # 播放器将组内首个频道的 logo 显示为分组图标（如 OTT Navigator / TiviMate 等）
-group_logo_url = "https://cdn.jsdelivr.net/gh/zengzifeng520/IPTV@main/group-logo.png"
+# 图标文件为 Twemoji 彩色表情，自托管在仓库 icons/ 目录（文件名 = emoji codepoint）
+group_emoji = {
+    "央视频道": "1f4fa",     # 📺
+    "中数传媒": "1f3ac",     # 🎬
+    "4K节目": "2728",        # ✨
+    "卫视频道": "1f4f0",     # 🛰
+    "港台节目": "1f306",     # 🌆
+    "北京节目": "1f3db",     # 🏛
+    "上海节目": "1f303",     # 🌃
+    "重庆节目": "26f0",      # ⛰
+    "四川节目": "1f43c",     # 🐼
+    "福建节目": "1f30a",     # 🌊
+    "广西节目": "1f5fb",     # 🏞
+    "黑龙江节目": "2744",    # ❄
+    "江苏节目": "1f3ee",     # 🏮
+    "湖南节目": "1f3ef",     # 🏯
+    "浙江节目": "26e9",      # ⛩
+    "山东节目": "1f304",     # 🌄
+    "IPTV": "1f4bb",         # 💻
+    "广东频道": "1f334",     # 🌴
+    "地方频道": "1f4cd",     # 📍
+    "其他频道": "1f4e6",     # 📦
+}
+group_logo_base = "https://cdn.jsdelivr.net/gh/zengzifeng520/IPTV@main/icons"
+group_logo_default = "1f4fa"  # 未在映射中的分组使用的兜底图标
 
 # ── 订阅源 ───────────────────────────────────────────────────────
 # 每个 URL 都是一个 IPTV 直播源文件（支持 m3u 或 txt 格式）
