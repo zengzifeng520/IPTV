@@ -57,7 +57,7 @@ url_blacklist = [
 # logo      → 频道图标 URL（m3u 中 tvg-logo 属性）
 announcements = [
     {
-        "channel": "公告-yuanzl77",
+        "channel": "公告-猫贩子锋哥",
         "entries": [
                     ]
     }
@@ -68,9 +68,7 @@ announcements = [
 #   1. M3U 头部的 x-tvg-url 属性，供播放器读取节目指南
 #   2. 频道 ID 映射（{频道名: tvg-id}），让播放器正确显示节目单
 # 建议将最全面的源放在最后，作为保底
-epg_urls = [
- 
-]
+epg_urls = [https://zengzifeng.ccwu.cc/output/epg.xml]
 
 # ── 质量检测 — HTTP 快筛 ─────────────────────────────────────────────
 # enable_quality_check : True=启用质量检测（测活后过滤失效源），False=直接输出不过滤
