@@ -6,13 +6,6 @@
 
 ---
 
-![img](./image/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-09-21%20185627.png)
-![img](./image/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202026-09-21%20185432.png)
-![img](./image/Screenshot_2026-08-18-08-36-24-053_com.fongmi.android.tv.jpg)
-![img](./image/Screenshot_2026-08-18-08-36-21-906_com.fongmi.android.tv.jpg)
-
----
-
 ## 功能特性
 
 - **自动聚合**：从多个数据源抓取频道，按频道名精确匹配和模糊匹配汇总
