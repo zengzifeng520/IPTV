@@ -80,10 +80,11 @@ def fetch_channels(url):
             for line in lines:
                 line = line.strip()
                 if line.startswith("#EXTINF"):
-                    match = re.search(r'group-title="(.*?)",(.*)', line)
+                    match = re.search(r'group-title="(.*?)"', line)
                     if match:
                         current_category = match.group(1).strip()
-                        channel_name = match.group(2).strip()
+                        name_match = re.search(r',([^,]*)$', line)
+                        channel_name = name_match.group(1).strip() if name_match else ""
                         if current_category not in channels:
                             channels[current_category] = []
                 elif line and not line.startswith("#"):
@@ -151,9 +152,15 @@ def filter_source_urls(template_file):
             else:
                 all_channels[category] = channel_list
 
-    matched_channels = match_channels(template_channels, all_channels)
+    # 将 {cat: [(name, url), ...]} 转为 {cat: {name: [url, ...]}}
+    grouped = OrderedDict()
+    for category, channel_list in all_channels.items():
+        grouped[category] = OrderedDict()
+        for channel_name, channel_url in channel_list:
+            if channel_url:
+                grouped[category].setdefault(channel_name, []).append(channel_url)
 
-    return matched_channels, template_channels
+    return grouped, template_channels
 
 
 def is_ipv6(url):
@@ -278,18 +285,9 @@ async def async_main():
     if config.hotel_config.get("enabled", False):
         logging.info("[酒店源] 开始抓取...")
         hotel_channels = await fetch_hotel.fetch_all_from_hotel()
-        # 酒店源数据是 {cat: {name: [urls]}}，转成 {cat: [(name, url), ...]} 格式
-        st_flat = {}
-        for cat, ch_dict in hotel_channels.items():
-            st_flat[cat] = []
-            for name, urls in ch_dict.items():
-                for url in urls:
-                    st_flat[cat].append((name, url))
-        # 用 match_channels 做模糊匹配，只保留模板中有的频道
-        st_matched = match_channels(template_channels, st_flat)
-        # 合并到 channels
+        # 酒店源数据是 {cat: {name: [urls]}}，直接合并到 channels
         merged = 0
-        for cat, ch_dict in st_matched.items():
+        for cat, ch_dict in hotel_channels.items():
             for name, urls in ch_dict.items():
                 channels.setdefault(cat, {}).setdefault(name, []).extend(urls)
                 merged += len(urls)
@@ -331,45 +329,43 @@ def updateChannelUrlsM3U(channels, template_channels, epg_id_map=None, check_res
                     f_m3u.write(f"{announcement['url']}\n")
                     f_txt.write(f"{announcement['name']},{announcement['url']}\n")
 
-            for category, channel_list in template_channels.items():
+            for category, channel_dict in channels.items():
                 f_txt.write(f"{category},#genre#\n")
-                if category in channels:
-                    for channel_name in channel_list:
-                        if channel_name in channels[category]:
-                            sorted_urls = sorted(
-                                channels[category][channel_name],
-                                key=lambda url: _url_sort_key(url, check_results, category)
-                            )
-                            filtered_urls = []
-                            for url in sorted_urls:
-                                if url and url not in written_urls and not any(blacklist in url for blacklist in config.url_blacklist):
-                                    filtered_urls.append(url)
-                                    written_urls.add(url)
+                for channel_name, url_list in channel_dict.items():
+                    sorted_urls = sorted(
+                        url_list,
+                        key=lambda url: _url_sort_key(url, check_results, category)
+                    )
+                    filtered_urls = []
+                    for url in sorted_urls:
+                        if url and url not in written_urls and not any(blacklist in url for blacklist in config.url_blacklist):
+                            filtered_urls.append(url)
+                            written_urls.add(url)
 
-                            # 限制每频道最大线路数
-                            if config.max_lines_per_channel > 0 and len(filtered_urls) > config.max_lines_per_channel:
-                                old_count = len(filtered_urls)
-                                filtered_urls = filtered_urls[:config.max_lines_per_channel]
-                                logging.info("[频道] %s 线路从 %d 截断至 %d", channel_name, old_count, config.max_lines_per_channel)
-                            total_urls = len(filtered_urls)
-                            for index, url in enumerate(filtered_urls, start=1):
-                                if is_ipv6(url):
-                                    extra = _get_meta_suffix(url, check_results)
-                                    url_suffix = f"$LR—IPV6{extra}" if total_urls == 1 else f"$LR—IPV6【线路{index}】{extra}"
-                                else:
-                                    extra = _get_meta_suffix(url, check_results)
-                                    url_suffix = f"$LR—IPV4{extra}" if total_urls == 1 else f"$LR—IPV4【线路{index}】{extra}"
-                                if "$" in url:
-                                    base_url = url.split("$", 1)[0]
-                                else:
-                                    base_url = url
+                    # 限制每频道最大线路数
+                    if config.max_lines_per_channel > 0 and len(filtered_urls) > config.max_lines_per_channel:
+                        old_count = len(filtered_urls)
+                        filtered_urls = filtered_urls[:config.max_lines_per_channel]
+                        logging.info("[频道] %s 线路从 %d 截断至 %d", channel_name, old_count, config.max_lines_per_channel)
+                    total_urls = len(filtered_urls)
+                    for index, url in enumerate(filtered_urls, start=1):
+                        if is_ipv6(url):
+                            extra = _get_meta_suffix(url, check_results)
+                            url_suffix = f"$LR—IPV6{extra}" if total_urls == 1 else f"$LR—IPV6【线路{index}】{extra}"
+                        else:
+                            extra = _get_meta_suffix(url, check_results)
+                            url_suffix = f"$LR—IPV4{extra}" if total_urls == 1 else f"$LR—IPV4【线路{index}】{extra}"
+                        if "$" in url:
+                            base_url = url.split("$", 1)[0]
+                        else:
+                            base_url = url
 
-                                new_url = f"{base_url}{url_suffix}"
+                        new_url = f"{base_url}{url_suffix}"
 
-                                tvg_id = epg_id_map.get(channel_name, channel_name)
-                                f_m3u.write(f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{channel_name}\" tvg-logo=\"https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{channel_name}.png\" group-title=\"{category}\",{channel_name}\n")
-                                f_m3u.write(new_url + "\n")
-                                f_txt.write(f"{channel_name},{new_url}\n")
+                        tvg_id = epg_id_map.get(channel_name, channel_name)
+                        f_m3u.write(f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{channel_name}\" tvg-logo=\"https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{channel_name}.png\" group-title=\"{category}\",{channel_name}\n")
+                        f_m3u.write(new_url + "\n")
+                        f_txt.write(f"{channel_name},{new_url}\n")
 
             f_txt.write("\n")
 
