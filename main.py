@@ -29,6 +29,66 @@ def parse_template(template_file):
     return template_channels
 
 
+def parse_alias_template(template_file):
+    """解析频道别名模板：每行为「分组名,#genre#」或「规范频道名：别名1#别名2#...」。
+    返回 OrderedDict{分组: [(规范名, [别名...]), ...]}，保持模板顺序。"""
+    template = OrderedDict()
+    current_group = None
+    with open(template_file, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or line.startswith("#EXT"):
+                continue
+            if "#genre#" in line:
+                current_group = line.split(",")[0].strip()
+                template.setdefault(current_group, [])
+                continue
+            if current_group is None:
+                continue
+            if "：" in line:
+                name, aliases = line.split("：", 1)
+            elif ":" in line:
+                name, aliases = line.split(":", 1)
+            else:
+                continue
+            name = name.strip()
+            alias_list = [a.strip() for a in aliases.split("#") if a.strip()]
+            if name:
+                template[current_group].append((name, alias_list))
+    logging.info(f"[模板] 解析别名模板成功，共 {len(template)} 个分组")
+    return template
+
+
+def remap_by_template(channels, template_map):
+    """将 channels {cat: {name: [urls]}} 按模板别名归一到「模板分组 + 规范频道名」。
+    返回 (matched, leftover)：
+      matched : OrderedDict{模板分组: OrderedDict{规范名: [urls]}}，按模板顺序
+      leftover: OrderedDict{原分组: OrderedDict{原频道名: [urls]}}，模板未覆盖的频道
+    同一别名在模板多处出现时按「先到先得」，只归入第一个分组。"""
+    lookup = {}
+    for group, entries in template_map.items():
+        for name, aliases in entries:
+            for cand in [name] + aliases:
+                key = _normalize(cand)
+                if key and key not in lookup:
+                    lookup[key] = (group, name)
+
+    matched = OrderedDict()
+    leftover = OrderedDict()
+    matched_cnt = 0
+    for cat, ch_dict in channels.items():
+        for ch_name, urls in ch_dict.items():
+            hit = lookup.get(_normalize(ch_name))
+            if hit:
+                group, std_name = hit
+                matched.setdefault(group, OrderedDict()).setdefault(std_name, []).extend(urls)
+                matched_cnt += len(urls)
+            else:
+                leftover.setdefault(cat, OrderedDict()).setdefault(ch_name, []).extend(urls)
+    logging.info(f"[模板] 归组完成：模板命中 {matched_cnt} 个 URL，未命中频道按原分组保留")
+    return matched, leftover
+
+
 def fetch_epg_id_map():
     """从 config.epg_urls 依次加载 EPG，按频道名合并映射。保底源放末尾。"""
     import gzip
@@ -276,10 +336,11 @@ def _print_domain_suggestions(fail_domains: dict):
 
 
 async def async_main():
-    """异步主入口：fetch -> check -> write"""
+    """异步主入口：fetch -> check -> remap -> write"""
     epg_id_map = fetch_epg_id_map()
-    template_file = "demo.txt"
-    channels, template_channels = filter_source_urls(template_file)
+    template_file = "template.txt"
+    template_map = parse_alias_template(template_file)
+    channels, _ = filter_source_urls(template_file)
 
     # 酒店源抓取
     if config.hotel_config.get("enabled", False):
@@ -300,10 +361,11 @@ async def async_main():
         _print_domain_suggestions(fail_domains)
         logging.info("[质量检测] 完成")
 
-    updateChannelUrlsM3U(channels, template_channels, epg_id_map, check_results)
+    matched, leftover = remap_by_template(channels, template_map)
+    updateChannelUrlsM3U(matched, leftover, epg_id_map, check_results)
 
 
-def updateChannelUrlsM3U(channels, template_channels, epg_id_map=None, check_results=None):
+def updateChannelUrlsM3U(matched, leftover, epg_id_map=None, check_results=None):
     written_urls = set()
     epg_id_map = epg_id_map or {}
 
@@ -317,6 +379,44 @@ def updateChannelUrlsM3U(channels, template_channels, epg_id_map=None, check_res
                 name = name.replace("__TIME__", current_date)
             announcement["name"] = name
 
+    def write_group(category, channel_dict):
+        f_txt.write(f"{category},#genre#\n")
+        for channel_name, url_list in channel_dict.items():
+            sorted_urls = sorted(
+                url_list,
+                key=lambda url: _url_sort_key(url, check_results, category)
+            )
+            filtered_urls = []
+            for url in sorted_urls:
+                if url and url not in written_urls and not any(blacklist in url for blacklist in config.url_blacklist):
+                    filtered_urls.append(url)
+                    written_urls.add(url)
+
+            # 限制每频道最大线路数
+            if config.max_lines_per_channel > 0 and len(filtered_urls) > config.max_lines_per_channel:
+                old_count = len(filtered_urls)
+                filtered_urls = filtered_urls[:config.max_lines_per_channel]
+                logging.info("[频道] %s 线路从 %d 截断至 %d", channel_name, old_count, config.max_lines_per_channel)
+            total_urls = len(filtered_urls)
+            for index, url in enumerate(filtered_urls, start=1):
+                if is_ipv6(url):
+                    extra = _get_meta_suffix(url, check_results)
+                    url_suffix = f"$LR—IPV6{extra}" if total_urls == 1 else f"$LR—IPV6【线路{index}】{extra}"
+                else:
+                    extra = _get_meta_suffix(url, check_results)
+                    url_suffix = f"$LR—IPV4{extra}" if total_urls == 1 else f"$LR—IPV4【线路{index}】{extra}"
+                if "$" in url:
+                    base_url = url.split("$", 1)[0]
+                else:
+                    base_url = url
+
+                new_url = f"{base_url}{url_suffix}"
+
+                tvg_id = epg_id_map.get(channel_name, channel_name)
+                f_m3u.write(f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{channel_name}\" tvg-logo=\"https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{channel_name}.png\" group-title=\"{category}\",{channel_name}\n")
+                f_m3u.write(new_url + "\n")
+                f_txt.write(f"{channel_name},{new_url}\n")
+
     with open("live.m3u", "w", encoding="utf-8") as f_m3u:
         epg_attr = ",".join(chr(34)+epg_url+chr(34) for epg_url in config.epg_urls)
         f_m3u.write(f"#EXTM3U x-tvg-url={epg_attr}\n")
@@ -329,43 +429,13 @@ def updateChannelUrlsM3U(channels, template_channels, epg_id_map=None, check_res
                     f_m3u.write(f"{announcement['url']}\n")
                     f_txt.write(f"{announcement['name']},{announcement['url']}\n")
 
-            for category, channel_dict in channels.items():
-                f_txt.write(f"{category},#genre#\n")
-                for channel_name, url_list in channel_dict.items():
-                    sorted_urls = sorted(
-                        url_list,
-                        key=lambda url: _url_sort_key(url, check_results, category)
-                    )
-                    filtered_urls = []
-                    for url in sorted_urls:
-                        if url and url not in written_urls and not any(blacklist in url for blacklist in config.url_blacklist):
-                            filtered_urls.append(url)
-                            written_urls.add(url)
+            # 1) 按模板分组输出（模板命中频道，按模板分组/频道顺序）
+            for category, channel_dict in matched.items():
+                write_group(category, channel_dict)
 
-                    # 限制每频道最大线路数
-                    if config.max_lines_per_channel > 0 and len(filtered_urls) > config.max_lines_per_channel:
-                        old_count = len(filtered_urls)
-                        filtered_urls = filtered_urls[:config.max_lines_per_channel]
-                        logging.info("[频道] %s 线路从 %d 截断至 %d", channel_name, old_count, config.max_lines_per_channel)
-                    total_urls = len(filtered_urls)
-                    for index, url in enumerate(filtered_urls, start=1):
-                        if is_ipv6(url):
-                            extra = _get_meta_suffix(url, check_results)
-                            url_suffix = f"$LR—IPV6{extra}" if total_urls == 1 else f"$LR—IPV6【线路{index}】{extra}"
-                        else:
-                            extra = _get_meta_suffix(url, check_results)
-                            url_suffix = f"$LR—IPV4{extra}" if total_urls == 1 else f"$LR—IPV4【线路{index}】{extra}"
-                        if "$" in url:
-                            base_url = url.split("$", 1)[0]
-                        else:
-                            base_url = url
-
-                        new_url = f"{base_url}{url_suffix}"
-
-                        tvg_id = epg_id_map.get(channel_name, channel_name)
-                        f_m3u.write(f"#EXTINF:-1 tvg-id=\"{tvg_id}\" tvg-name=\"{channel_name}\" tvg-logo=\"https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/{channel_name}.png\" group-title=\"{category}\",{channel_name}\n")
-                        f_m3u.write(new_url + "\n")
-                        f_txt.write(f"{channel_name},{new_url}\n")
+            # 2) 模板未覆盖的频道，按原来源分组追加
+            for category, channel_dict in leftover.items():
+                write_group(category, channel_dict)
 
             f_txt.write("\n")
 
