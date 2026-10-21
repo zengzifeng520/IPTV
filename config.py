@@ -29,9 +29,10 @@ source_urls = [
 #              可选值: "China Telecom", "China Unicom", "China Mobile",
 #                      "Alibaba Cloud", "Tencent" 等
 hotel_config = {
-    "hotel_api": "",
+    "hotel_api": "https://api.809899.xyz",
+    "hotel_api_auth": "iptv-tools-official-v1",
+    "hotel_keyword": "",
     "enabled": True,
-    "allowed_orgs": ["China Mobile","Alibaba Cloud"],
 }
 
 # ── URL 黑名单 ───────────────────────────────────────────────────────
