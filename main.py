@@ -74,7 +74,7 @@ def remap_by_template(channels, template_map):
                     lookup[key] = (group, name)
 
     matched = OrderedDict()
-    leftover = OrderedDict()
+    leftover_all = OrderedDict()
     matched_cnt = 0
     for cat, ch_dict in channels.items():
         for ch_name, urls in ch_dict.items():
@@ -84,8 +84,12 @@ def remap_by_template(channels, template_map):
                 matched.setdefault(group, OrderedDict()).setdefault(std_name, []).extend(urls)
                 matched_cnt += len(urls)
             else:
-                leftover.setdefault(cat, OrderedDict()).setdefault(ch_name, []).extend(urls)
-    logging.info(f"[模板] 归组完成：模板命中 {matched_cnt} 个 URL，未命中频道按原分组保留")
+                # 模板未覆盖的频道统一归入「其他频道」，避免按来源散落大量分组
+                leftover_all.setdefault(ch_name, []).extend(urls)
+    leftover = OrderedDict()
+    if leftover_all:
+        leftover["其他频道"] = leftover_all
+    logging.info(f"[模板] 归组完成：模板命中 {matched_cnt} 个 URL，未命中频道并入「其他频道」")
     return matched, leftover
 
 
