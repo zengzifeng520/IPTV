@@ -1,0 +1,13 @@
+{
+ "updated": "2026-10-21T20:00:10+00:00",
+ "checked": 604,
+ "alive": 599,
+ "alive_ratio": 0.9917,
+ "max_fails": 2,
+ "dead_now": 3,
+ "removed_m3u_lines": 3,
+ "removed_txt_lines": 3,
+ "kept_m3u_entries": 601,
+ "kept_txt_entries": 601,
+ "duration_s": 23.5
+}
