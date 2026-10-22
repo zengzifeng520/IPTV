@@ -1,3 +1,4 @@
+# 更新时间：2026-10-22 03:17:38（北京时间）
 广东频道,#genre#
 广东体育,http://183.239.248.218:8181/tsfile/live/1041_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路1】 【720x480@128kbps 3Mbps】
 广东体育,http://154.50.18.45:85/tsfile/live/0125_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路2】 【1920x1080 2Mbps】
@@ -127,7 +128,6 @@
 四川卫视,http://123.52.8.82:9003/hls/38/index.m3u8$LR—IPV4【线路5】 【1920x1080 1Mbps】
 四川卫视,http://183.239.248.218:8181/tsfile/live/0123_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路6】 【1920x1080 256kbps】
 四川卫视,http://super8gb.x3322.net:9901/tsfile/live/0123_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路7】 【1920x1080 256kbps】
-四川卫视,http://110.72.74.217:808/hls/44/index.m3u8$LR—IPV4【线路8】 【720x576 224kbps】
 辽宁卫视,http://110.72.55.22:8181/tsfile/live/0121_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路1】 【1920x1080@256kbps 12Mbps】
 辽宁卫视,http://111.59.24.227:8181/tsfile/live/0121_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路2】 【1920x1080@256kbps 6Mbps】
 辽宁卫视,http://183.239.248.218:8181/tsfile/live/0121_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路3】 【720x576@256kbps 4Mbps】
@@ -428,8 +428,8 @@ CHC家庭影院,http://120.238.84.45:9901/tsfile/live/1093_1.m3u8?key=txiptv&amp
 都市剧场,http://120.198.86.186:9901/tsfile/live/1107_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4 【1920x1080 256kbps】
 其他频道,#genre#
 CGTN英语高清,http://121.9.14.195:50085/tsfile/live/0018_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4 【720x576 96kbps】
+平南综合频道,http://110.72.102.89:808/hls/6/index.m3u8$LR—IPV4 【720x576 128kbps】
 珠江台,http://110.72.60.144:808/hls/24/index.m3u8$LR—IPV4 【720x480 128kbps】
-南方卫视,http://110.72.79.65:808/hls/81/index.m3u8$LR—IPV4【线路1】 【720x576 192kbps】
 南方卫视,http://110.72.74.217:808/hls/81/index.m3u8$LR—IPV4【线路2】 【720x576 192kbps】
 广西综艺-B,http://111.59.24.227:8181/tsfile/live/1001_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路1】 【720x576@64kbps 5Mbps】
 广西综艺-B,http://110.72.55.22:8181/tsfile/live/1001_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路2】 【720x576@64kbps 2Mbps】
