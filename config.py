@@ -121,7 +121,7 @@ check_max_conn   = 30
 # min_resolution     : 最低分辨率宽度要求（字符串，如 "720" 表示宽 >= 720px）
 #                      设为空字符串 "" = 不限制分辨率
 # ffprobe_max_streams: ffprobe 最多读取的流数量，避免大文件探流耗时过长
-ffmpeg_path        = "C:/Users/zengzifeng/AppData/Local/Microsoft/WinGet/Packages/Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe/ffmpeg-9.0.2-full_build/bin/ffprobe.exe"        # 空 = 使用系统 PATH 里的 ffprobe
+ffmpeg_path        = ""        # 空 = 使用系统 PATH 里的 ffprobe
 enable_ffprobe     = True
 ffprobe_timeout    = 5.0
 min_bitrate        = 0         # min_bitrate = 200000 → 码率>0 且 <200kbps 的源会被淘汰；码率=0 的源不受影响
