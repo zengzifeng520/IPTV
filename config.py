@@ -106,7 +106,7 @@ epg_urls = [
 # check_max_conn       : 最大并发检测数，调高可加速但更占带宽
 enable_quality_check = True
 check_timeout    = 5.0
-check_max_conn   = 30
+check_max_conn   = 120
 
 # ── 质量检测 — FFprobe 中度探测 ───────────────────────────────────────
 # enable_ffprobe     : True=启用第二层 FFprobe 探测，False=仅 HTTP 快筛
@@ -123,10 +123,20 @@ check_max_conn   = 30
 # ffprobe_max_streams: ffprobe 最多读取的流数量，避免大文件探流耗时过长
 ffmpeg_path        = ""        # 空 = 使用系统 PATH 里的 ffprobe
 enable_ffprobe     = True
-ffprobe_timeout    = 5.0
+ffprobe_timeout    = 8.0
 min_bitrate        = 0         # min_bitrate = 200000 → 码率>0 且 <200kbps 的源会被淘汰；码率=0 的源不受影响
 min_resolution     = "720"     # 宽度最低 720px
 ffprobe_max_streams = 3
+
+# ffprobe_max_workers : ffprobe / 深度探测的进程池大小（网络等待型，可开大）
+ffprobe_max_workers = 48
+
+# deep_probe_max_conn : 深度探测的并发上限
+deep_probe_max_conn = 16
+
+# accept_http_passed : True=HTTP 已拿到合法播放列表、但 ffprobe 失败时仍保留（B 级）
+#                      能显著减少"起播慢的好源被误杀"；False=只保留 ffprobe/deep 通过的源
+accept_http_passed = True
 
 # ── 深度探测配置 ───────────────────────────────────────────────────────
 # enable_deep_probe  : True=启用第三层深度探测（仅对 m3u8 流），False=仅中度探测
@@ -136,6 +146,6 @@ ffprobe_max_streams = 3
 # min_speed_kbps     : 最小速度阈值（kbps），低于此值的源会被过滤
 #                      0 = 不过滤（只评分不淘汰）
 #                      建议 2000（2 Mbps）避免推流卡顿
-enable_deep_probe  = True
+enable_deep_probe  = False
 deep_probe_timeout = 5.0
 min_speed_kbps     = 2500  # 2.5 Mbps
