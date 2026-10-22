@@ -1,8 +1,8 @@
 name: Daily Update
 
 on:
-  schedule:
-    - cron: '0 22 * * *'
+  # 定时由 NAS 触发（每天 06:05 调 workflow_dispatch）。
+  # 这两个仓库的 GitHub cron 基本不触发，索性不再依赖它。
   workflow_dispatch:
     branches:
       - main
