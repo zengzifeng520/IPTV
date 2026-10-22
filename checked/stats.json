@@ -1,13 +1,13 @@
 {
- "updated": "2026-10-22T22:17:16+08:00",
+ "updated": "2026-10-22T22:58:56+08:00",
  "checked": 1764,
- "alive": 1712,
- "alive_ratio": 0.9705,
+ "alive": 1714,
+ "alive_ratio": 0.9717,
  "max_fails": 2,
- "dead_now": 26,
- "removed_m3u_lines": 26,
- "removed_txt_lines": 26,
- "kept_m3u_entries": 1739,
- "kept_txt_entries": 1739,
- "duration_s": 30.6
+ "dead_now": 40,
+ "removed_m3u_lines": 40,
+ "removed_txt_lines": 40,
+ "kept_m3u_entries": 1725,
+ "kept_txt_entries": 1725,
+ "duration_s": 30.3
 }
