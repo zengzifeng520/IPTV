@@ -431,7 +431,6 @@ CGTN英语高清,http://121.9.14.195:50085/tsfile/live/0018_1.m3u8?key=txiptv&am
 珠江台,http://110.72.60.144:808/hls/24/index.m3u8$LR—IPV4 【720x480 128kbps】
 南方卫视,http://110.72.79.65:808/hls/81/index.m3u8$LR—IPV4【线路1】 【720x576 192kbps】
 南方卫视,http://110.72.74.217:808/hls/81/index.m3u8$LR—IPV4【线路2】 【720x576 192kbps】
-中国电影,http://110.72.72.37:808/hls/61/index.m3u8$LR—IPV4 【720x480 128kbps】
 广西综艺-B,http://111.59.24.227:8181/tsfile/live/1001_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路1】 【720x576@64kbps 5Mbps】
 广西综艺-B,http://110.72.55.22:8181/tsfile/live/1001_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路2】 【720x576@64kbps 2Mbps】
 cctv3标清,http://111.59.24.227:8181/tsfile/live/1002_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4【线路1】 【720x576@64kbps 5Mbps】
