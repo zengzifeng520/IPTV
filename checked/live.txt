@@ -428,7 +428,6 @@ CHC家庭影院,http://120.238.84.45:9901/tsfile/live/1093_1.m3u8?key=txiptv&amp
 都市剧场,http://120.198.86.186:9901/tsfile/live/1107_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4 【1920x1080 256kbps】
 其他频道,#genre#
 CGTN英语高清,http://121.9.14.195:50085/tsfile/live/0018_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0$LR—IPV4 【720x576 96kbps】
-平南综合频道,http://110.72.102.89:808/hls/6/index.m3u8$LR—IPV4 【720x576 128kbps】
 珠江台,http://110.72.60.144:808/hls/24/index.m3u8$LR—IPV4 【720x480 128kbps】
 南方卫视,http://110.72.79.65:808/hls/81/index.m3u8$LR—IPV4【线路1】 【720x576 192kbps】
 南方卫视,http://110.72.74.217:808/hls/81/index.m3u8$LR—IPV4【线路2】 【720x576 192kbps】
