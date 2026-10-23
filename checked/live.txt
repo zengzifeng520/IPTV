@@ -1,4 +1,4 @@
-# 更新时间：2026-10-23 21:15:49（北京时间）
+# 更新时间：2026-10-23 21:17:47（北京时间）
 更新时间 2026-10-23 06:20:47,#genre#
 2026-10-23 06:20:47 更新,http://60.10.50.14:808/hls/1/index.m3u8
 央视频道,#genre#
@@ -821,7 +821,6 @@ CCTV16 4K,http://yy15238.netyiyang.com:8800/rtp/239.69.1.249:11136
 河南卫视,http://42.225.147.42:8089/hls/17/index.m3u8
 河南卫视,http://121.9.14.195:50085/tsfile/live/0139_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 河南卫视,http://110.72.64.226:808/hls/49/index.m3u8
-河南卫视,http://110.72.66.3:808/hls/49/index.m3u8
 河南卫视,http://110.72.87.89:808/hls/49/index.m3u8
 河北卫视,http://60.10.50.14:808/hls/18/index.m3u8
 河北卫视,http://103.72.172.253:8041/hls/493322856/index.m3u8
@@ -1147,6 +1146,7 @@ IPTV,#genre#
 家家购物,http://ak.cj022.com:10080/udp/225.1.1.227:5002
 少儿动画,http://120.198.86.186:9901/tsfile/live/1057_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 少儿动画,http://120.238.84.45:9901/tsfile/live/1039_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
+IPTV3,http://110.72.66.3:808/hls/2012/index.m3u8
 IPTV3,http://110.72.87.89:808/hls/2012/index.m3u8
 IPTV5,http://183.234.143.5:85/tsfile/live/1079_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 IPTV8,http://183.234.143.5:85/tsfile/live/1081_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
@@ -1225,15 +1225,17 @@ CGTN英语高清,http://121.9.14.195:50085/tsfile/live/0018_1.m3u8?key=txiptv&am
 测试-TVB剧集/体彩,http://110.72.64.226:808/hls/57/index.m3u8
 测试-TVB剧集/体彩,http://110.72.66.3:808/hls/57/index.m3u8
 测试-TVB剧集/体彩,http://110.72.87.89:808/hls/57/index.m3u8
+测试-TVBJ,http://110.72.64.226:808/hls/58/index.m3u8
 测试-TVBJ,http://110.72.66.3:808/hls/58/index.m3u8
 测试-TVBJ,http://110.72.87.89:808/hls/58/index.m3u8
 广西综艺,http://110.72.64.226:808/hls/334/index.m3u8
 广西综艺,http://110.72.66.3:808/hls/334/index.m3u8
+广西综艺,http://110.72.87.89:808/hls/334/index.m3u8
 贵港新闻综合,http://110.72.64.226:808/hls/7/index.m3u8
 贵港新闻综合,http://110.72.66.3:808/hls/7/index.m3u8
 贵港新闻综合,http://110.72.87.89:808/hls/7/index.m3u8
 平南综合频道,http://110.72.64.226:808/hls/6/index.m3u8
-平南综合频道,http://110.72.87.89:808/hls/6/index.m3u8
+平南综合频道,http://110.72.66.3:808/hls/6/index.m3u8
 广告宣传,http://110.72.64.226:808/hls/10/index.m3u8
 广告宣传,http://110.72.66.3:808/hls/10/index.m3u8
 广告宣传,http://110.72.87.89:808/hls/10/index.m3u8
@@ -1250,22 +1252,21 @@ CGTN英语高清,http://121.9.14.195:50085/tsfile/live/0018_1.m3u8?key=txiptv&am
 南方卫视,http://110.72.66.3:808/hls/81/index.m3u8
 南方卫视,http://110.72.87.89:808/hls/81/index.m3u8
 南方卫视,http://183.234.143.5:85/tsfile/live/1033_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
-中国教育1,http://110.72.64.226:808/hls/129/index.m3u8
 中国教育1,http://110.72.66.3:808/hls/129/index.m3u8
 中国教育1,http://110.72.87.89:808/hls/129/index.m3u8
 卡酷动漫,http://110.72.64.226:808/hls/138/index.m3u8
+卡酷动漫,http://110.72.66.3:808/hls/138/index.m3u8
 卡酷动漫,http://110.72.87.89:808/hls/138/index.m3u8
+中国电影,http://110.72.64.226:808/hls/61/index.m3u8
 中国电影,http://110.72.66.3:808/hls/61/index.m3u8
 中国电影,http://110.72.87.89:808/hls/61/index.m3u8
-农林卫视,http://110.72.87.89:808/hls/18/index.m3u8
+农林卫视,http://110.72.64.226:808/hls/18/index.m3u8
 农林卫视,http://112.255.144.205:85/tsfile/live/0002_45.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 安多卫视,http://110.72.64.226:808/hls/4/index.m3u8
-安多卫视,http://110.72.66.3:808/hls/4/index.m3u8
 安多卫视,http://110.72.87.89:808/hls/4/index.m3u8
 安多卫视,http://219.144.190.2:9901/tsfile/live/1010_1.m3u8?key=txiptv&amp;playlive=0&amp;authid=0
 安多卫视,http://zhgx.app.sccncd.com:80/rtp/239.0.0.109:5140
 广西公共,http://110.72.64.226:808/hls/202/index.m3u8
-广西公共,http://110.72.66.3:808/hls/202/index.m3u8
 广西公共,http://110.72.87.89:808/hls/202/index.m3u8
 CCTV7-军农,http://183.239.248.218:8181/tsfile/live/0007_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 CCTV7-军农,http://139.227.221.198:85/tsfile/live/0007_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
