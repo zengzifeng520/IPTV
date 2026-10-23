@@ -1,5 +1,5 @@
 #EXTM3U x-tvg-url="https://zengzifeng.ccwu.cc/output/epg.xml"
-# 更新时间：2026-10-23 13:17:42（北京时间）
+# 更新时间：2026-10-23 14:17:43（北京时间）
 #EXTINF:-1 tvg-id="更新" tvg-name="更新" group-title="更新时间 2026-10-23 06:20:47",2026-10-23 06:20:47 更新
 http://60.10.50.14:808/hls/1/index.m3u8
 #EXTINF:-1 tvg-id="CCTV1" tvg-name="CCTV1" tvg-logo="https://cdn.jsdelivr.net/gh/zengzifeng520/IPTV@main/icons/1f4fa.png" group-title="央视频道",CCTV1
@@ -180,6 +180,8 @@ http://www.kxtv.xyz:9901/tsfile/live/0016_1.m3u8?key=txiptv&amp;playlive=1&amp;a
 http://116.128.243.121:85/tsfile/live/0016_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 #EXTINF:-1 tvg-id="CCTV5+" tvg-name="CCTV5+" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CCTV5+.png" group-title="央视频道",CCTV5+
 http://154.50.18.45:85/tsfile/live/0016_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
+#EXTINF:-1 tvg-id="CCTV5+" tvg-name="CCTV5+" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CCTV5+.png" group-title="央视频道",CCTV5+
+http://110.72.66.3:808/hls/14/index.m3u8
 #EXTINF:-1 tvg-id="CCTV5+" tvg-name="CCTV5+" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CCTV5+.png" group-title="央视频道",CCTV5+
 http://110.72.87.89:808/hls/14/index.m3u8
 #EXTINF:-1 tvg-id="CCTV5+" tvg-name="CCTV5+" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CCTV5+.png" group-title="央视频道",CCTV5+
@@ -1225,6 +1227,8 @@ http://121.9.14.195:50085/tsfile/live/0113_1.m3u8?key=txiptv&amp;playlive=1&amp;
 #EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西卫视.png" group-title="卫视频道",广西卫视
 http://110.72.64.226:808/hls/9/index.m3u8
 #EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西卫视.png" group-title="卫视频道",广西卫视
+http://110.72.66.3:808/hls/9/index.m3u8
+#EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西卫视.png" group-title="卫视频道",广西卫视
 http://110.72.87.89:808/hls/9/index.m3u8
 #EXTINF:-1 tvg-id="广西卫视" tvg-name="广西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西卫视.png" group-title="卫视频道",广西卫视
 http://110.72.56.100:808/hls/9/index.m3u8
@@ -1320,6 +1324,8 @@ http://110.72.64.226:808/hls/42/index.m3u8
 http://110.72.66.3:808/hls/42/index.m3u8
 #EXTINF:-1 tvg-id="山西卫视" tvg-name="山西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/山西卫视.png" group-title="卫视频道",山西卫视
 http://110.72.87.89:808/hls/42/index.m3u8
+#EXTINF:-1 tvg-id="山西卫视" tvg-name="山西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/山西卫视.png" group-title="卫视频道",山西卫视
+http://110.72.56.100:808/hls/42/index.m3u8
 #EXTINF:-1 tvg-id="江西卫视" tvg-name="江西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/江西卫视.png" group-title="卫视频道",江西卫视
 http://103.72.172.253:8041/hls/529792586/index.m3u8
 #EXTINF:-1 tvg-id="江西卫视" tvg-name="江西卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/江西卫视.png" group-title="卫视频道",江西卫视
@@ -1767,7 +1773,7 @@ http://110.72.64.226:808/hls/3/index.m3u8
 #EXTINF:-1 tvg-id="青海卫视" tvg-name="青海卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/青海卫视.png" group-title="卫视频道",青海卫视
 http://110.72.66.3:808/hls/3/index.m3u8
 #EXTINF:-1 tvg-id="青海卫视" tvg-name="青海卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/青海卫视.png" group-title="卫视频道",青海卫视
-http://110.72.87.89:808/hls/3/index.m3u8
+http://110.72.56.100:808/hls/3/index.m3u8
 #EXTINF:-1 tvg-id="青海卫视" tvg-name="青海卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/青海卫视.png" group-title="卫视频道",青海卫视
 http://171.8.86.48:85/tsfile/live/0140_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 #EXTINF:-1 tvg-id="青海卫视" tvg-name="青海卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/青海卫视.png" group-title="卫视频道",青海卫视
@@ -1961,7 +1967,7 @@ http://120.238.84.45:9901/tsfile/live/1062_1.m3u8?key=txiptv&amp;playlive=1&amp;
 #EXTINF:-1 tvg-id="山东教育卫视" tvg-name="山东教育卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/山东教育卫视.png" group-title="卫视频道",山东教育卫视
 http://110.72.64.226:808/hls/36/index.m3u8
 #EXTINF:-1 tvg-id="山东教育卫视" tvg-name="山东教育卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/山东教育卫视.png" group-title="卫视频道",山东教育卫视
-http://110.72.87.89:808/hls/36/index.m3u8
+http://110.72.56.100:808/hls/36/index.m3u8
 #EXTINF:-1 tvg-id="山东教育卫视" tvg-name="山东教育卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/山东教育卫视.png" group-title="卫视频道",山东教育卫视
 http://112.255.144.205:85/tsfile/live/0002_50.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 #EXTINF:-1 tvg-id="山东教育卫视" tvg-name="山东教育卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/山东教育卫视.png" group-title="卫视频道",山东教育卫视
@@ -2067,8 +2073,6 @@ http://zhgx.app.sccncd.com:80/rtp/239.0.0.9:5140
 #EXTINF:-1 tvg-id="广西影视" tvg-name="广西影视" tvg-logo="https://cdn.jsdelivr.net/gh/zengzifeng520/IPTV@main/icons/1f5fb.png" group-title="广西节目",广西影视
 http://110.72.64.226:808/hls/201/index.m3u8
 #EXTINF:-1 tvg-id="广西影视" tvg-name="广西影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西影视.png" group-title="广西节目",广西影视
-http://110.72.66.3:808/hls/201/index.m3u8
-#EXTINF:-1 tvg-id="广西影视" tvg-name="广西影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西影视.png" group-title="广西节目",广西影视
 http://110.72.87.89:808/hls/201/index.m3u8
 #EXTINF:-1 tvg-id="广西影视" tvg-name="广西影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西影视.png" group-title="广西节目",广西影视
 http://110.72.56.100:808/hls/201/index.m3u8
@@ -2078,10 +2082,10 @@ http://219.159.91.10:8801/tsfile/live/1004_1.m3u8?key=txiptv&amp;playlive=1&amp;
 http://110.72.64.226:808/hls/206/index.m3u8
 #EXTINF:-1 tvg-id="广西新闻" tvg-name="广西新闻" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西新闻.png" group-title="广西节目",广西新闻
 http://110.72.66.3:808/hls/206/index.m3u8
+#EXTINF:-1 tvg-id="广西新闻" tvg-name="广西新闻" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西新闻.png" group-title="广西节目",广西新闻
+http://110.72.87.89:808/hls/206/index.m3u8
 #EXTINF:-1 tvg-id="广西都市" tvg-name="广西都市" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西都市.png" group-title="广西节目",广西都市
 http://110.72.64.226:808/hls/204/index.m3u8
-#EXTINF:-1 tvg-id="广西都市" tvg-name="广西都市" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西都市.png" group-title="广西节目",广西都市
-http://110.72.66.3:808/hls/204/index.m3u8
 #EXTINF:-1 tvg-id="黑龙江新闻法治" tvg-name="黑龙江新闻法治" tvg-logo="https://cdn.jsdelivr.net/gh/zengzifeng520/IPTV@main/icons/2744.png" group-title="黑龙江节目",黑龙江新闻法治
 http://shuangyashan.coccc.online:65000/tsfile/live/1028_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 #EXTINF:-1 tvg-id="黑龙江影视" tvg-name="黑龙江影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/黑龙江影视.png" group-title="黑龙江节目",黑龙江影视
@@ -2194,6 +2198,8 @@ http://183.234.143.5:85/tsfile/live/1028_1.m3u8?key=txiptv&amp;playlive=1&amp;au
 http://110.72.64.226:808/hls/59/index.m3u8
 #EXTINF:-1 tvg-id="广东影视" tvg-name="广东影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广东影视.png" group-title="广东频道",广东影视
 http://121.9.14.195:50085/tsfile/live/1018_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
+#EXTINF:-1 tvg-id="广东影视" tvg-name="广东影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广东影视.png" group-title="广东频道",广东影视
+http://110.72.66.3:808/hls/59/index.m3u8
 #EXTINF:-1 tvg-id="广东影视" tvg-name="广东影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广东影视.png" group-title="广东频道",广东影视
 http://110.72.87.89:808/hls/59/index.m3u8
 #EXTINF:-1 tvg-id="广东影视" tvg-name="广东影视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广东影视.png" group-title="广东频道",广东影视
@@ -2454,12 +2460,12 @@ http://121.9.14.195:50085/tsfile/live/0018_1.m3u8?key=txiptv&amp;playlive=1&amp;
 http://121.9.14.195:50085/tsfile/live/1016_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 #EXTINF:-1 tvg-id="﻿CCTV-1" tvg-name="﻿CCTV-1" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/﻿CCTV-1.png" group-title="其他频道",﻿CCTV-1
 http://110.72.64.226:808/hls/54/index.m3u8
-#EXTINF:-1 tvg-id="测试-TVB剧集/体彩" tvg-name="测试-TVB剧集/体彩" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/测试-TVB剧集/体彩.png" group-title="其他频道",测试-TVB剧集/体彩
-http://110.72.64.226:808/hls/57/index.m3u8
+#EXTINF:-1 tvg-id="﻿CCTV-1" tvg-name="﻿CCTV-1" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/﻿CCTV-1.png" group-title="其他频道",﻿CCTV-1
+http://110.72.66.3:808/hls/54/index.m3u8
+#EXTINF:-1 tvg-id="﻿CCTV-1" tvg-name="﻿CCTV-1" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/﻿CCTV-1.png" group-title="其他频道",﻿CCTV-1
+http://110.72.56.100:808/hls/54/index.m3u8
 #EXTINF:-1 tvg-id="测试-TVB剧集/体彩" tvg-name="测试-TVB剧集/体彩" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/测试-TVB剧集/体彩.png" group-title="其他频道",测试-TVB剧集/体彩
 http://110.72.87.89:808/hls/57/index.m3u8
-#EXTINF:-1 tvg-id="测试-TVB剧集/体彩" tvg-name="测试-TVB剧集/体彩" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/测试-TVB剧集/体彩.png" group-title="其他频道",测试-TVB剧集/体彩
-http://110.72.56.100:808/hls/57/index.m3u8
 #EXTINF:-1 tvg-id="测试-TVBJ" tvg-name="测试-TVBJ" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/测试-TVBJ.png" group-title="其他频道",测试-TVBJ
 http://110.72.64.226:808/hls/58/index.m3u8
 #EXTINF:-1 tvg-id="测试-TVBJ" tvg-name="测试-TVBJ" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/测试-TVBJ.png" group-title="其他频道",测试-TVBJ
@@ -2471,8 +2477,6 @@ http://110.72.64.226:808/hls/334/index.m3u8
 #EXTINF:-1 tvg-id="广西综艺" tvg-name="广西综艺" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西综艺.png" group-title="其他频道",广西综艺
 http://110.72.66.3:808/hls/334/index.m3u8
 #EXTINF:-1 tvg-id="贵港新闻综合" tvg-name="贵港新闻综合" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/贵港新闻综合.png" group-title="其他频道",贵港新闻综合
-http://110.72.64.226:808/hls/7/index.m3u8
-#EXTINF:-1 tvg-id="贵港新闻综合" tvg-name="贵港新闻综合" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/贵港新闻综合.png" group-title="其他频道",贵港新闻综合
 http://110.72.66.3:808/hls/7/index.m3u8
 #EXTINF:-1 tvg-id="平南综合频道" tvg-name="平南综合频道" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/平南综合频道.png" group-title="其他频道",平南综合频道
 http://110.72.64.226:808/hls/6/index.m3u8
@@ -2481,9 +2485,15 @@ http://110.72.56.100:808/hls/6/index.m3u8
 #EXTINF:-1 tvg-id="广告宣传" tvg-name="广告宣传" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广告宣传.png" group-title="其他频道",广告宣传
 http://110.72.64.226:808/hls/10/index.m3u8
 #EXTINF:-1 tvg-id="广告宣传" tvg-name="广告宣传" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广告宣传.png" group-title="其他频道",广告宣传
+http://110.72.66.3:808/hls/10/index.m3u8
+#EXTINF:-1 tvg-id="广告宣传" tvg-name="广告宣传" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广告宣传.png" group-title="其他频道",广告宣传
 http://110.72.87.89:808/hls/10/index.m3u8
+#EXTINF:-1 tvg-id="广告宣传" tvg-name="广告宣传" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广告宣传.png" group-title="其他频道",广告宣传
+http://110.72.56.100:808/hls/10/index.m3u8
 #EXTINF:-1 tvg-id="嘉嘉卡通" tvg-name="嘉嘉卡通" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/嘉嘉卡通.png" group-title="其他频道",嘉嘉卡通
 http://110.72.64.226:808/hls/12/index.m3u8
+#EXTINF:-1 tvg-id="嘉嘉卡通" tvg-name="嘉嘉卡通" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/嘉嘉卡通.png" group-title="其他频道",嘉嘉卡通
+http://110.72.66.3:808/hls/12/index.m3u8
 #EXTINF:-1 tvg-id="嘉嘉卡通" tvg-name="嘉嘉卡通" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/嘉嘉卡通.png" group-title="其他频道",嘉嘉卡通
 http://110.72.87.89:808/hls/12/index.m3u8
 #EXTINF:-1 tvg-id="嘉嘉卡通" tvg-name="嘉嘉卡通" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/嘉嘉卡通.png" group-title="其他频道",嘉嘉卡通
@@ -2495,8 +2505,6 @@ http://110.72.66.3:808/hls/24/index.m3u8
 #EXTINF:-1 tvg-id="珠江台" tvg-name="珠江台" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/珠江台.png" group-title="其他频道",珠江台
 http://110.72.87.89:808/hls/24/index.m3u8
 #EXTINF:-1 tvg-id="珠江台" tvg-name="珠江台" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/珠江台.png" group-title="其他频道",珠江台
-http://110.72.56.100:808/hls/24/index.m3u8
-#EXTINF:-1 tvg-id="珠江台" tvg-name="珠江台" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/珠江台.png" group-title="其他频道",珠江台
 http://183.234.143.5:85/tsfile/live/1074_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 #EXTINF:-1 tvg-id="珠江台" tvg-name="珠江台" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/珠江台.png" group-title="其他频道",珠江台
 http://183.234.143.5:85/tsfile/live/1077_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
@@ -2507,15 +2515,15 @@ http://110.72.64.226:808/hls/81/index.m3u8
 #EXTINF:-1 tvg-id="南方卫视" tvg-name="南方卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/南方卫视.png" group-title="其他频道",南方卫视
 http://110.72.66.3:808/hls/81/index.m3u8
 #EXTINF:-1 tvg-id="南方卫视" tvg-name="南方卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/南方卫视.png" group-title="其他频道",南方卫视
-http://110.72.87.89:808/hls/81/index.m3u8
-#EXTINF:-1 tvg-id="南方卫视" tvg-name="南方卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/南方卫视.png" group-title="其他频道",南方卫视
 http://110.72.56.100:808/hls/81/index.m3u8
 #EXTINF:-1 tvg-id="南方卫视" tvg-name="南方卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/南方卫视.png" group-title="其他频道",南方卫视
 http://183.234.143.5:85/tsfile/live/1033_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 #EXTINF:-1 tvg-id="中国教育1" tvg-name="中国教育1" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/中国教育1.png" group-title="其他频道",中国教育1
 http://110.72.64.226:808/hls/129/index.m3u8
 #EXTINF:-1 tvg-id="中国教育1" tvg-name="中国教育1" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/中国教育1.png" group-title="其他频道",中国教育1
-http://110.72.87.89:808/hls/129/index.m3u8
+http://110.72.66.3:808/hls/129/index.m3u8
+#EXTINF:-1 tvg-id="中国教育1" tvg-name="中国教育1" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/中国教育1.png" group-title="其他频道",中国教育1
+http://110.72.56.100:808/hls/129/index.m3u8
 #EXTINF:-1 tvg-id="卡酷动漫" tvg-name="卡酷动漫" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/卡酷动漫.png" group-title="其他频道",卡酷动漫
 http://110.72.64.226:808/hls/138/index.m3u8
 #EXTINF:-1 tvg-id="卡酷动漫" tvg-name="卡酷动漫" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/卡酷动漫.png" group-title="其他频道",卡酷动漫
@@ -2539,8 +2547,6 @@ http://110.72.64.226:808/hls/4/index.m3u8
 #EXTINF:-1 tvg-id="安多卫视" tvg-name="安多卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/安多卫视.png" group-title="其他频道",安多卫视
 http://110.72.66.3:808/hls/4/index.m3u8
 #EXTINF:-1 tvg-id="安多卫视" tvg-name="安多卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/安多卫视.png" group-title="其他频道",安多卫视
-http://110.72.87.89:808/hls/4/index.m3u8
-#EXTINF:-1 tvg-id="安多卫视" tvg-name="安多卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/安多卫视.png" group-title="其他频道",安多卫视
 http://110.72.56.100:808/hls/4/index.m3u8
 #EXTINF:-1 tvg-id="安多卫视" tvg-name="安多卫视" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/安多卫视.png" group-title="其他频道",安多卫视
 http://219.144.190.2:9901/tsfile/live/1010_1.m3u8?key=txiptv&amp;playlive=0&amp;authid=0
@@ -2549,9 +2555,9 @@ http://zhgx.app.sccncd.com:80/rtp/239.0.0.109:5140
 #EXTINF:-1 tvg-id="广西公共" tvg-name="广西公共" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西公共.png" group-title="其他频道",广西公共
 http://110.72.64.226:808/hls/202/index.m3u8
 #EXTINF:-1 tvg-id="广西公共" tvg-name="广西公共" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西公共.png" group-title="其他频道",广西公共
-http://110.72.87.89:808/hls/202/index.m3u8
+http://110.72.66.3:808/hls/202/index.m3u8
 #EXTINF:-1 tvg-id="广西公共" tvg-name="广西公共" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/广西公共.png" group-title="其他频道",广西公共
-http://110.72.56.100:808/hls/202/index.m3u8
+http://110.72.87.89:808/hls/202/index.m3u8
 #EXTINF:-1 tvg-id="CCTV7-军农" tvg-name="CCTV7-军农" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CCTV7-军农.png" group-title="其他频道",CCTV7-军农
 http://183.239.248.218:8181/tsfile/live/0007_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 #EXTINF:-1 tvg-id="CCTV7-军农" tvg-name="CCTV7-军农" tvg-logo="https://gcore.jsdelivr.net/gh/yuanzl77/TVlogo@master/png/CCTV7-军农.png" group-title="其他频道",CCTV7-军农
