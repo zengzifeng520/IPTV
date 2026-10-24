@@ -1,4 +1,4 @@
-# 更新时间：2026-10-25 05:18:13（北京时间）
+# 更新时间：2026-10-25 06:18:12（北京时间）
 更新时间 2026-10-23 06:20:47,#genre#
 2026-10-23 06:20:47 更新,http://60.10.50.14:808/hls/1/index.m3u8
 央视频道,#genre#
@@ -91,7 +91,6 @@ CCTV5+,http://110.72.64.226:808/hls/14/index.m3u8
 CCTV5+,http://www.kxtv.xyz:9901/tsfile/live/0016_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 CCTV5+,http://116.128.243.121:85/tsfile/live/0016_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 CCTV5+,http://154.50.18.45:85/tsfile/live/0016_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
-CCTV5+,http://110.72.66.3:808/hls/14/index.m3u8
 CCTV5+,http://110.72.87.89:808/hls/14/index.m3u8
 CCTV6,http://60.10.50.14:808/hls/6/index.m3u8
 CCTV6,http://123.159.70.15:85/tsfile/live/1018_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
@@ -600,6 +599,7 @@ CCTV16 4K,http://yy15238.netyiyang.com:8800/rtp/239.69.1.249:11136
 广西卫视,http://60.223.94.230:9003/hls/29/index.m3u8
 广西卫视,http://121.9.14.195:50085/tsfile/live/0113_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 广西卫视,http://110.72.64.226:808/hls/9/index.m3u8
+广西卫视,http://110.72.66.3:808/hls/9/index.m3u8
 广西卫视,http://124.165.251.82:85/tsfile/live/0113_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 广西卫视,http://139.211.217.79:9004/hls/54/index.m3u8
 黑龙江卫视,http://60.10.50.14:808/hls/27/index.m3u8
@@ -683,7 +683,6 @@ CCTV16 4K,http://yy15238.netyiyang.com:8800/rtp/239.69.1.249:11136
 旅游卫视,http://116.128.243.121:85/tsfile/live/0114_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 旅游卫视,http://101.18.30.18:808/tsfile/live/0119_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 旅游卫视,http://110.72.64.226:808/hls/1/index.m3u8
-旅游卫视,http://110.72.66.3:808/hls/1/index.m3u8
 旅游卫视,http://112.255.144.205:85/tsfile/live/0002_36.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 旅游卫视,http://183.234.143.5:85/tsfile/live/1113_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 陕西卫视,http://60.10.50.14:808/hls/37/index.m3u8
@@ -806,7 +805,6 @@ CCTV16 4K,http://yy15238.netyiyang.com:8800/rtp/239.69.1.249:11136
 河南卫视,http://121.9.14.195:50085/tsfile/live/0139_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 河南卫视,http://110.72.64.226:808/hls/49/index.m3u8
 河南卫视,http://110.72.66.3:808/hls/49/index.m3u8
-河南卫视,http://110.72.87.89:808/hls/49/index.m3u8
 河北卫视,http://60.10.50.14:808/hls/18/index.m3u8
 河北卫视,http://103.72.172.253:8041/hls/493322856/index.m3u8
 河北卫视,http://139.227.221.198:85/tsfile/live/0117_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
@@ -855,6 +853,7 @@ CCTV16 4K,http://yy15238.netyiyang.com:8800/rtp/239.69.1.249:11136
 青海卫视,http://124.165.251.82:85/tsfile/live/0140_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 青海卫视,http://101.18.30.18:808/tsfile/live/0140_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 青海卫视,http://110.72.64.226:808/hls/3/index.m3u8
+青海卫视,http://110.72.66.3:808/hls/3/index.m3u8
 青海卫视,http://110.72.87.89:808/hls/3/index.m3u8
 青海卫视,http://171.8.86.48:85/tsfile/live/0140_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 青海卫视,http://112.255.144.205:85/tsfile/live/0002_40.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
@@ -919,6 +918,7 @@ CCTV16 4K,http://yy15238.netyiyang.com:8800/rtp/239.69.1.249:11136
 金鹰卡通,http://120.238.84.45:9901/tsfile/live/1036_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 金鹰卡通,http://116.128.243.121:85/tsfile/live/1007_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 金鹰卡通,http://110.72.66.3:808/hls/26/index.m3u8
+金鹰卡通,http://110.72.87.89:808/hls/26/index.m3u8
 金鹰卡通,http://139.211.217.79:9004/hls/85/index.m3u8
 金鹰卡通,http://183.239.248.218:8181/tsfile/live/1003_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 金鹰卡通,http://183.234.143.5:85/tsfile/live/1120_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
@@ -1003,6 +1003,7 @@ TVB星河,http://120.237.39.10:9901/tsfile/live/1005_1.m3u8?key=txiptv&amp;playl
 广西节目,#genre#
 广西影视,http://110.72.64.226:808/hls/201/index.m3u8
 广西影视,http://110.72.66.3:808/hls/201/index.m3u8
+广西影视,http://110.72.87.89:808/hls/201/index.m3u8
 广西影视,http://219.159.91.10:8801/tsfile/live/1004_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 广西新闻,http://110.72.64.226:808/hls/206/index.m3u8
 广西新闻,http://110.72.66.3:808/hls/206/index.m3u8
@@ -1019,6 +1020,7 @@ TVB星河,http://120.237.39.10:9901/tsfile/live/1005_1.m3u8?key=txiptv&amp;playl
 江苏节目,#genre#
 优漫卡通,http://110.72.64.226:808/hls/31/index.m3u8
 优漫卡通,http://110.72.66.3:808/hls/31/index.m3u8
+优漫卡通,http://110.72.87.89:808/hls/31/index.m3u8
 优漫卡通,http://219.144.190.2:9901/tsfile/live/1019_1.m3u8?key=txiptv&amp;playlive=0&amp;authid=0
 财富天下,http://180.173.74.68:85/tsfile/live/1023_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 财富天下,http://219.144.190.2:9901/tsfile/live/1009_1.m3u8?key=txiptv&amp;playlive=0&amp;authid=0
@@ -1085,8 +1087,6 @@ IPTV,#genre#
 广东体育,http://183.239.248.218:8181/tsfile/live/1041_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 广东体育,http://www.kxtv.xyz:9901/tsfile/live/0125_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 广东体育,http://154.50.18.45:85/tsfile/live/0125_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
-广东体育,http://113.64.147.85:8089/hls/1/index.m3u8
-广东体育,http://113.64.147.88:8081/hls/1/index.m3u8
 广东体育,http://121.9.14.195:50085/tsfile/live/1015_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 广东体育,http://183.234.143.5:85/tsfile/live/1063_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 广东体育,http://183.234.143.5:85/tsfile/live/1036_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
@@ -1098,8 +1098,6 @@ IPTV,#genre#
 南方1台,http://183.239.248.218:8181/tsfile/live/1050_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 南方4台,http://183.239.248.218:8181/tsfile/live/1052_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 南方5台,http://183.239.248.218:8181/tsfile/live/1053_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
-南山有线,http://113.64.147.85:8089/hls/18/index.m3u8
-南山有线,http://113.64.147.88:8081/hls/18/index.m3u8
 地方频道,#genre#
 聚鲨环球精选,http://ak.cj022.com:10080/udp/225.1.1.102:5002
 家有购物,http://ak.cj022.com:10080/udp/225.1.1.226:5002
@@ -1108,6 +1106,7 @@ IPTV,#genre#
 少儿动画,http://120.238.84.45:9901/tsfile/live/1039_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 IPTV3,http://110.72.64.226:808/hls/2012/index.m3u8
 IPTV3,http://110.72.66.3:808/hls/2012/index.m3u8
+IPTV3,http://110.72.87.89:808/hls/2012/index.m3u8
 IPTV5,http://183.234.143.5:85/tsfile/live/1079_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 IPTV8,http://183.234.143.5:85/tsfile/live/1081_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 IPTV经典电影,http://183.234.143.5:85/tsfile/live/1133_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
@@ -1168,27 +1167,27 @@ IPTV经典电影,http://183.234.143.5:85/tsfile/live/1133_1.m3u8?key=txiptv&amp;
 CHC高清电影,http://219.144.190.2:9901/tsfile/live/1021_1.m3u8?key=txiptv&amp;playlive=0&amp;authid=0
 CHC高清电影,http://ak.cj022.com:10080/udp/225.1.1.214:5002
 本港台,http://183.239.248.218:8181/tsfile/live/1070_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
-本港台,http://113.64.147.88:8081/hls/135/index.m3u8
 CGTN英语高清,http://121.9.14.195:50085/tsfile/live/0018_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 广东科教,http://121.9.14.195:50085/tsfile/live/1016_1.m3u8?key=txiptv&amp;playlive=1&amp;authid=0
 ﻿CCTV-1,http://110.72.64.226:808/hls/54/index.m3u8
 ﻿CCTV-1,http://110.72.66.3:808/hls/54/index.m3u8
 测试-TVB剧集/体彩,http://110.72.64.226:808/hls/57/index.m3u8
 测试-TVB剧集/体彩,http://110.72.66.3:808/hls/57/index.m3u8
+测试-TVB剧集/体彩,http://110.72.87.89:808/hls/57/index.m3u8
 测试-TVBJ,http://110.72.64.226:808/hls/58/index.m3u8
 测试-TVBJ,http://110.72.66.3:808/hls/58/index.m3u8
+测试-TVBJ,http://110.72.87.89:808/hls/58/index.m3u8
 广西综艺,http://110.72.64.226:808/hls/334/index.m3u8
 广西综艺,http://110.72.66.3:808/hls/334/index.m3u8
 广西综艺,http://110.72.87.89:808/hls/334/index.m3u8
 贵港新闻综合,http://110.72.64.226:808/hls/7/index.m3u8
-贵港新闻综合,http://110.72.66.3:808/hls/7/index.m3u8
 贵港新闻综合,http://110.72.87.89:808/hls/7/index.m3u8
 平南综合频道,http://110.72.64.226:808/hls/6/index.m3u8
 平南综合频道,http://110.72.66.3:808/hls/6/index.m3u8
-平南综合频道,http://110.72.87.89:808/hls/6/index.m3u8
 广告宣传,http://110.72.64.226:808/hls/10/index.m3u8
 广告宣传,http://110.72.66.3:808/hls/10/index.m3u8
 嘉嘉卡通,http://110.72.64.226:808/hls/12/index.m3u8
+嘉嘉卡通,http://110.72.87.89:808/hls/12/index.m3u8
 珠江台,http://110.72.64.226:808/hls/24/index.m3u8
 珠江台,http://110.72.66.3:808/hls/24/index.m3u8
 珠江台,http://110.72.87.89:808/hls/24/index.m3u8
@@ -1201,6 +1200,7 @@ CGTN英语高清,http://121.9.14.195:50085/tsfile/live/0018_1.m3u8?key=txiptv&am
 中国教育1,http://110.72.64.226:808/hls/129/index.m3u8
 中国教育1,http://110.72.66.3:808/hls/129/index.m3u8
 中国教育1,http://110.72.87.89:808/hls/129/index.m3u8
+卡酷动漫,http://110.72.64.226:808/hls/138/index.m3u8
 卡酷动漫,http://110.72.66.3:808/hls/138/index.m3u8
 卡酷动漫,http://110.72.87.89:808/hls/138/index.m3u8
 中国电影,http://110.72.64.226:808/hls/61/index.m3u8

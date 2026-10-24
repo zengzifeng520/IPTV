@@ -1,13 +1,13 @@
 {
- "updated": "2026-10-25T05:17:25+08:00",
+ "updated": "2026-10-25T06:17:24+08:00",
  "checked": 1720,
- "alive": 1585,
- "alive_ratio": 0.9215,
+ "alive": 1595,
+ "alive_ratio": 0.9273,
  "max_fails": 2,
  "dead_now": 113,
  "removed_m3u_lines": 113,
  "removed_txt_lines": 113,
  "kept_m3u_entries": 1608,
  "kept_txt_entries": 1608,
- "duration_s": 47.7
+ "duration_s": 47.8
 }
