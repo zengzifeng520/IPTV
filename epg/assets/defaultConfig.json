@@ -1,5 +1,10 @@
 {
-    "xml_urls": [],
+    "xml_urls": [
+        "http://epg.51zmt.top:8000/e.xml",
+        "https://epg.pw/xmltv/epg_CN.xml",
+        "https://live.fanmingming.com/e.xml",
+        "https://epg.v1.mk/fy.xml"
+    ],
     "days_to_keep": 7,
     "start_time": "00:00",
     "end_time": "23:59",
