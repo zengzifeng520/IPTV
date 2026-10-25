@@ -19,7 +19,7 @@ def fetch(url, timeout=90):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (EPG-Bot; +https://github.com/zengzifeng520/IPTV)"})
     with urllib.request.urlopen(req, timeout=timeout) as r:
         data = r.read()
-    if data[:2] == b"\x1f\x8b":  # gzip magic
+    if data[:2] == b"\x1f\x8b":
         data = gzip.decompress(data)
     return data
 
@@ -28,21 +28,15 @@ def normalize(name):
         return ""
     s = name.lower()
     s = re.sub(r"[\s\-_+·•.()（）【】\[\]：:、,，/\\]+", "", s)
-    # 只去掉“高清/标清”等画质后缀（频道身份不变），不去掉 4k/8k（CCTV4K 和 CCTV-8K 是不同频道）
     s = s.replace("高清", "").replace("标清", "")
     return s
 
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
-
-    # 只保留最近一天的节目（丢弃历史节目，减小体积、贴近真实 EPG 服务行为）
     cutoff = (datetime.utcnow() - timedelta(days=1)).strftime("%Y%m%d")
 
     all_channels = {}   # norm -> {"id": canon_id, "names": set, "icons": set}
-    seen_prog = set()   # (norm, start, title) 去重
-    prog_list = []      # 收集 programme 元素
-    total_in = 0
-    dropped_old = 0
+    best_prog = {}      # (norm, start) -> (element, title_len)
 
     for url in SOURCES:
         try:
@@ -75,29 +69,22 @@ def main():
                     all_channels[norm]["icons"].add(src)
 
         for p in root.findall("programme"):
-            total_in += 1
             start = p.get("start", "")
             if start and start[:8] < cutoff:
-                dropped_old += 1
                 continue
             src_cid = p.get("channel", "")
             norm = id_to_norm.get(src_cid) or normalize(src_cid)
+            key = (norm, start)
             t = p.find("title")
             title = (t.text or "").strip() if t is not None else ""
-            key = (norm, start, title)
-            if key in seen_prog:
+            if key in best_prog:
+                old_el, old_len = best_prog[key]
+                if len(title) > old_len:  # 同一时间槽，保留信息更全（标题更长）的那条
+                    best_prog[key] = (p, len(title))
                 continue
-            seen_prog.add(key)
-            canon = all_channels.get(norm, {}).get("id", src_cid)
-            p.set("channel", canon)
-            # 统一加上 lang="zh"
-            for el in p.iter():
-                if el.tag in ("title", "desc", "sub-title", "episode-num"):
-                    if el.get("lang") is None:
-                        el.set("lang", "zh")
-            prog_list.append(p)
+            best_prog[key] = (p, len(title))
 
-        print(f"[ok] {url}: programmes_kept={len(seen_prog)}", file=sys.stderr)
+        print(f"[ok] {url}: 累计去重后={len(best_prog)}", file=sys.stderr)
 
     # 组装输出
     tv = ET.Element("tv")
@@ -114,6 +101,16 @@ def main():
         for src in sorted(info["icons"]):
             ic = ET.SubElement(ch, "icon")
             ic.set("src", src)
+
+    prog_list = []
+    for (norm, start), (p, _) in best_prog.items():
+        src_cid = p.get("channel", "")
+        canon = all_channels.get(norm, {}).get("id", src_cid)
+        p.set("channel", canon)
+        for el in p.iter():
+            if el.tag in ("title", "desc", "sub-title", "episode-num") and el.get("lang") is None:
+                el.set("lang", "zh")
+        prog_list.append(p)
     for p in prog_list:
         tv.append(p)
 
@@ -130,7 +127,7 @@ def main():
         f.write("")
 
     size = os.path.getsize(os.path.join(OUT_DIR, "e.xml"))
-    print(f"DONE: channels={len(all_channels)}, programmes={len(prog_list)} (in={total_in}, dropped_old={dropped_old}), e.xml={size/1024/1024:.1f}MB", file=sys.stderr)
+    print(f"DONE: channels={len(all_channels)}, programmes={len(prog_list)}, e.xml={size/1024/1024:.1f}MB", file=sys.stderr)
 
 if __name__ == "__main__":
     main()
