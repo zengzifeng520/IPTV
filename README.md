@@ -1,9 +1,11 @@
-![EPG-Server](https://socialify.git.ci/taksssss/EPG-Server/image?description=1&descriptionEditable=Docker%F0%9F%90%B3%E9%83%A8%E7%BD%B2%EF%BC%8C%E5%B8%A6%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2%E3%80%81%E5%8F%B0%E6%A0%87%E7%AE%A1%E7%90%86%EF%BC%8C%E6%94%AF%E6%8C%81DIYP%E3%80%81%E8%B6%85%E7%BA%A7%E7%9B%B4%E6%92%AD%E5%8F%8Axmltv%E3%80%82&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
+![EPG-Server](https://socialify.git.ci/zengzifeng520/IPTV/image?description=1&descriptionEditable=Docker%F0%9F%90%B3%E9%83%A8%E7%BD%B2%EF%BC%8C%E5%B8%A6%E8%AE%BE%E7%BD%AE%E7%95%8C%E9%9D%A2%E3%80%81%E5%8F%B0%E6%A0%87%E7%AE%A1%E7%90%86%EF%BC%8C%E6%94%AF%E6%8C%81DIYP%E3%80%81%E8%B6%85%E7%BA%A7%E7%9B%B4%E6%92%AD%E5%8F%8Axmltv%E3%80%82&font=Inter&forks=1&issues=1&language=1&owner=1&pattern=Circuit%20Board&pulls=1&stargazers=1&theme=Auto)
 
 # 📺 EPG-Server
-![Docker Pulls](https://img.shields.io/docker/pulls/taksss/php-epg) ![Image Size](https://img.shields.io/docker/image-size/taksss/php-epg)
+![Build](https://github.com/zengzifeng520/IPTV/actions/workflows/docker-image.yml/badge.svg)
 
 PHP 实现的 EPG（电子节目指南）服务端， `Docker` 部署，自带设置界面、台标管理、直播源管理，支持 **DIYP & 百川** 、 **超级直播** 以及 **xmltv** 格式。
+
+> 本仓库基于 [yqnext/epg](https://github.com/yqnext/epg) 部署，镜像由 GitHub Actions 自动构建并推送到 [ghcr.io/zengzifeng520/iptv](https://github.com/zengzifeng520/IPTV/pkgs/container/iptv)。
 
 ## 💻 主要功能
 
@@ -82,7 +84,7 @@ PHP 实现的 EPG（电子节目指南）服务端， `Docker` 部署，自带�
 2. 若已安装过，先删除旧版本并拉取新版本（**⚠️注意备份数据：`更多设置` -> `数据导出` / `数据导入`**）
 
    ```bash
-   docker rm php-epg -f && docker pull taksss/php-epg:latest
+   docker rm php-epg -f && docker pull ghcr.io/zengzifeng520/iptv:latest
    ```
 
 3. 拉取镜像并运行：
@@ -92,14 +94,14 @@ PHP 实现的 EPG（电子节目指南）服务端， `Docker` 部署，自带�
      --name php-epg \
      -p 5678:80 \
      --restart always \
-     taksss/php-epg:latest
+     ghcr.io/zengzifeng520/iptv:latest
    ```
 
     > 默认端口为 `5678` ，根据需要自行修改（注意端口占用）
     > 
     > 可选参数：`-e PHP_MEMORY_LIMIT=512M` ，设置 PHP 内存限制，默认 `512M`
     > 
-    > 无法正常拉取镜像的，可使用同步更新的 `腾讯云容器镜像`（`ccr.ccs.tencentyun.com/taksss/php-epg:latest`）
+    > 镜像由本仓库的 GitHub Actions 自动构建并推送到 `ghcr.io/zengzifeng520/iptv`
 
 <details>
 
@@ -112,7 +114,7 @@ PHP 实现的 EPG（电子节目指南）服务端， `Docker` 部署，自带�
       -v ./data:/htdocs/data \
       -p 5678:80 \
       --restart always \
-      taksss/php-epg:latest
+      ghcr.io/zengzifeng520/iptv:latest
     ```
 
 </details>
@@ -152,7 +154,7 @@ PHP 实现的 EPG（电子节目指南）服务端， `Docker` 部署，自带�
       --restart always \
       --link mysql:mysql \
       --link phpmyadmin:phpmyadmin \
-      taksss/php-epg:latest
+      ghcr.io/zengzifeng520/iptv:latest
     ```
  
 </details>
@@ -207,15 +209,15 @@ PHP 实现的 EPG（电子节目指南）服务端， `Docker` 部署，自带�
 <picture>
   <source
     media="(prefers-color-scheme: dark)"
-    srcset="https://api.star-history.com/svg?repos=taksssss/EPG-Server&type=Date&theme=dark"
+    srcset="https://api.star-history.com/svg?repos=zengzifeng520/IPTV&type=Date&theme=dark"
   />
   <source
     media="(prefers-color-scheme: light)"
-    srcset="https://api.star-history.com/svg?repos=taksssss/EPG-Server&type=Date"
+    srcset="https://api.star-history.com/svg?repos=zengzifeng520/IPTV&type=Date"
   />
   <img
     alt="Star History Chart"
-    src="https://api.star-history.com/svg?repos=taksssss/EPG-Server&type=Date"
+    src="https://api.star-history.com/svg?repos=zengzifeng520/IPTV&type=Date"
   />
 </picture>
 
